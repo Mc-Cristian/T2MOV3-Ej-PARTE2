@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "975207760592",
+    "firebase_url": "https://app-fire-a2a49-default-rtdb.firebaseio.com",
+    "project_id": "app-fire-a2a49",
+    "storage_bucket": "app-fire-a2a49.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975207760592:android:ec9709f373b2d930d9d4d5",
+        "android_client_info": {
+          "package_name": "com.example.app_fire"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXUaBMckPvEr9Mgfb7RRQjaI7wECzyiV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975207760592:android:4fd741713f29ef66d9d4d5",
+        "android_client_info": {
+          "package_name": "com.example.app_fire2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXUaBMckPvEr9Mgfb7RRQjaI7wECzyiV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975207760592:android:8ad36070bdb6f207d9d4d5",
+        "android_client_info": {
+          "package_name": "com.example.t2_ejercicios_parte2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXUaBMckPvEr9Mgfb7RRQjaI7wECzyiV0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
