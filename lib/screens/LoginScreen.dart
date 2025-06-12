@@ -69,34 +69,32 @@ class _LoginState extends State<Login> {
 
   @override
   Widget build(BuildContext context) {
-    // Definimos una paleta de colores suaves y agradables
-    final Color primaryColor = Colors.teal.shade400; // Un verde azulado suave
-    final Color accentColor = Colors.orange.shade300; // Un naranja cálido para acentos
-    final Color textColor = Colors.grey.shade800; // Texto oscuro pero no negro puro
-    final Color hintColor = Colors.grey.shade500; // Color para hints en TextField
+    final Color primaryColor = Colors.teal.shade400; 
+    final Color accentColor = Colors.orange.shade300; 
+    final Color textColor = Colors.grey.shade800; 
+    final Color hintColor = Colors.grey.shade500; 
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade50, // Fondo muy claro para suavidad
+      backgroundColor: Colors.grey.shade50, 
       body: Center(
         child: SingleChildScrollView(
           padding: const EdgeInsets.symmetric(horizontal: 30),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Icono de la aplicación - color principal
               Icon(Icons.lock_outline, size: 100, color: primaryColor),
               const SizedBox(height: 20),
-              // Título de la pantalla - estilo más agradable
+              
               Text(
                 "Iniciar Sesión",
                 style: TextStyle(
-                  fontSize: 32, // Tamaño más grande
-                  fontWeight: FontWeight.w700, // Menos bold que 'bold', más elegante
-                  color: textColor, // Color de texto definido
+                  fontSize: 32, 
+                  fontWeight: FontWeight.w700, 
+                  color: textColor, 
                 ),
               ),
               const SizedBox(height: 40),
-              // Campo de texto para el correo
+             
               TextField(
                 controller: _correo,
                 keyboardType: TextInputType.emailAddress,
@@ -104,23 +102,23 @@ class _LoginState extends State<Login> {
                   labelText: "Correo",
                   hintText: "ejemplo@dominio.com",
                   prefixIcon: Icon(Icons.email, color: primaryColor.withOpacity(0.7)),
-                  border: OutlineInputBorder( // Borde con un radio y color más suaves
+                  border: OutlineInputBorder( 
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: Colors.grey.shade300),
                   ),
-                  enabledBorder: OutlineInputBorder( // Borde cuando está habilitado
+                  enabledBorder: OutlineInputBorder( 
                     borderRadius: BorderRadius.circular(12),
                     borderSide: BorderSide(color: Colors.grey.shade300),
                   ),
-                  focusedBorder: OutlineInputBorder( // Borde cuando está enfocado
+                  focusedBorder: OutlineInputBorder( 
                     borderRadius: BorderRadius.circular(12),
-                    borderSide: BorderSide(color: primaryColor, width: 2), // Resalta con el primaryColor
+                    borderSide: BorderSide(color: primaryColor, width: 2), 
                   ),
                   labelStyle: TextStyle(color: hintColor),
                   hintStyle: TextStyle(color: hintColor.withOpacity(0.7)),
-                  filled: true, // Fondo relleno
-                  fillColor: Colors.white, // Color de fondo del campo
-                  contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16), // Padding interno
+                  filled: true, 
+                  fillColor: Colors.white, 
+                  contentPadding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16), 
                 ),
               ),
               const SizedBox(height: 20),
@@ -152,18 +150,18 @@ class _LoginState extends State<Login> {
                 obscureText: true,
               ),
               const SizedBox(height: 30),
-              // Botón de ingresar - estilo primario
+              // Botón de ingresar 
               ElevatedButton(
                 onPressed: () => loginFire(_correo.text, _contrasenia.text, context),
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 55), // Un poco más alto
-                  backgroundColor: primaryColor, // Usa el primaryColor definido
-                  foregroundColor: Colors.white, // Texto blanco para contraste
+                  minimumSize: const Size(double.infinity, 55), 
+                  backgroundColor: primaryColor, 
+                  foregroundColor: Colors.white, 
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                    borderRadius: BorderRadius.circular(12), 
                   ),
-                  elevation: 5, // Sombra ligera
-                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600), // Estilo de texto
+                  elevation: 5, 
+                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600), 
                 ),
                 child: const Text("Ingresar"),
               ),
@@ -173,11 +171,11 @@ class _LoginState extends State<Login> {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const Registro()), // Asegúrate de que `Registro` sea el nombre de tu pantalla de registro
+                    MaterialPageRoute(builder: (context) => const Registro()), 
                   );
                 },
                 style: TextButton.styleFrom(
-                  foregroundColor: accentColor, // Color de acento para el TextButton
+                  foregroundColor: accentColor, 
                   textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
                 ),
                 child: const Text("¿No tienes cuenta? Regístrate aquí"),
