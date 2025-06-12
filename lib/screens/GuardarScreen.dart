@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 
 class GuardarScreen extends StatefulWidget {
-  final String? notaId; // Puede ser null si es para agregar
-  final Map<String, dynamic>? nota; // Puede ser null si es para agregar
+  final String? notaId; 
+  final Map<String, dynamic>? nota; 
   final DatabaseReference notasRef;
 
   const GuardarScreen({
@@ -47,27 +47,27 @@ class _GuardarScreenState extends State<GuardarScreen> {
 
       if (widget.notaId == null) {
         // Añadir nueva nota
-        final newNoteRef = widget.notasRef.push(); // Firebase genera un ID único
+        final newNoteRef = widget.notasRef.push(); 
         await newNoteRef.set({
           'titulo': titulo,
           'descripcion': descripcion,
           'precio': precio,
-          'timestamp': ServerValue.timestamp, // Para ordenar por fecha de creación
+          'timestamp': ServerValue.timestamp, 
         });
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Nota agregada correctamente.')));
       } else {
-        // Actualizar nota existente
+        
         await widget.notasRef.child(widget.notaId!).update({
           'titulo': titulo,
           'descripcion': descripcion,
           'precio': precio,
-          'timestamp': ServerValue.timestamp, // Actualizar timestamp si quieres
+          'timestamp': ServerValue.timestamp, 
         });
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Nota actualizada correctamente.')));
       }
-      Navigator.of(context).pop(); // Regresar a la pantalla anterior
+      Navigator.of(context).pop(); 
     }
   }
 
@@ -75,7 +75,7 @@ class _GuardarScreenState extends State<GuardarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        // Este AppBar automáticamente mostrará la flecha de retroceso
+        
         title: Text(widget.notaId == null ? 'Agregar Nota' : 'Editar Nota'),
       ),
       body: Padding(
