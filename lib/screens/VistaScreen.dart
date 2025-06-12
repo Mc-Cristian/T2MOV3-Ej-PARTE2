@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:t2_ejercicios_parte2/screens/GuardarScreen.dart'; // Asegúrate de que la ruta sea correcta
+import 'package:t2_ejercicios_parte2/screens/GuardarScreen.dart';
 
 class VistaScreen extends StatelessWidget {
   final String notaId;
@@ -16,58 +16,57 @@ class VistaScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Definimos una paleta de colores suaves y agradables, consistente con Login y Registro
-    final Color primaryColor = Colors.teal.shade400; // Un verde azulado suave
-    final Color accentColor = Colors.orange.shade300; // Un naranja cálido para acentos
-    final Color textColor = Colors.grey.shade800; // Texto oscuro pero no negro puro
+    final Color primaryColor = Colors.teal.shade400; 
+    final Color accentColor = Colors.orange.shade300; 
+    final Color textColor = Colors.grey.shade800; 
 
     return Scaffold(
-      backgroundColor: Colors.grey.shade50, // Fondo muy claro para suavidad, consistente
+      backgroundColor: Colors.grey.shade50, 
       appBar: AppBar(
-        // Este AppBar automáticamente mostrará la flecha de retroceso
+       
         title: Text(
           nota['titulo'] ?? 'Detalles de la Nota',
-          style: const TextStyle(color: Colors.white), // Texto del título blanco
+          style: const TextStyle(color: Colors.white), 
         ),
-        backgroundColor: primaryColor, // Color principal consistente
-        foregroundColor: Colors.white, // Iconos y texto en primer plano blanco
-        elevation: 0, // Sin sombra para un look más plano
+        backgroundColor: primaryColor, 
+        foregroundColor: Colors.white, 
+        elevation: 0, 
       ),
-      body: SingleChildScrollView( // Añadir SingleChildScrollView para contenido largo
-        padding: const EdgeInsets.all(20.0), // Padding consistente
+      body: SingleChildScrollView( 
+        padding: const EdgeInsets.all(20.0), 
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Título de la nota
+            
             Text(
               'Título: ${nota['titulo'] ?? 'N/A'}',
               style: TextStyle(
-                fontSize: 28, // Tamaño de fuente más grande
-                fontWeight: FontWeight.w700, // Peso de fuente consistente
-                color: textColor, // Color de texto consistente
+                fontSize: 28, 
+                fontWeight: FontWeight.w700, 
+                color: textColor, 
               ),
             ),
-            const SizedBox(height: 15), // Espaciado consistente
+            const SizedBox(height: 15), 
 
             // Descripción de la nota
             Text(
               'Descripción: ${nota['descripcion'] ?? 'N/A'}',
               style: TextStyle(
                 fontSize: 18,
-                color: Colors.grey.shade700, // Color de texto más suave
+                color: Colors.grey.shade700, 
               ),
             ),
-            const SizedBox(height: 15), // Espaciado consistente
+            const SizedBox(height: 15), 
 
-            // Precio de la nota - Resaltado
+            
             Text(
               'Precio: \$${(nota['precio'] ?? 0).toStringAsFixed(2)}',
               style: TextStyle(
-                fontSize: 20, // Tamaño de fuente ligeramente mayor
+                fontSize: 20, 
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 30), // Más espacio antes del botón
+            const SizedBox(height: 30), 
 
             // Botón Editar Nota
             Center(
@@ -87,14 +86,14 @@ class VistaScreen extends StatelessWidget {
                   );
                 },
                 style: ElevatedButton.styleFrom(
-                  minimumSize: const Size(double.infinity, 55), // Ancho completo, altura consistente
-                  backgroundColor: accentColor, // Usar el accentColor para el botón de acción
-                  foregroundColor: Colors.white, // Texto blanco para contraste
+                  minimumSize: const Size(double.infinity, 55), 
+                  backgroundColor: accentColor, 
+                  foregroundColor: Colors.white, 
                   shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(12), // Bordes redondeados
+                    borderRadius: BorderRadius.circular(12), 
                   ),
                   elevation: 5, // Sombra ligera
-                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600), // Estilo de texto
+                  textStyle: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600), 
                 ),
               ),
             ),
